@@ -22,3 +22,27 @@ list4 = letters[::2]
 #print(list2)
 #print(list3)
 #print(list4)
+
+
+# Now a proper example on how to place a string into a list
+#-------------------------------------------------------------------------------------
+book = "The Lord of the Rings"
+book_list = list(book)
+# This is how you can place objects into a list
+
+# You can use the join function with slice notation
+
+str1 = ''.join(book_list[:3])
+#print(str1)
+
+# You can also go backwards
+str2 = ''.join(book_list[-5:])
+#print(str2)
+
+# You can go backwards with negative numbers on the STEP
+backwards =  book_list[::-1]
+#print(backwards)
+
+# You can slice out a word from the sentence backwards
+str3 = ''.join(book_list[20:15:-1])
+print(str3)
