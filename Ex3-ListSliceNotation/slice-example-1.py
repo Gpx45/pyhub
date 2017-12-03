@@ -1,0 +1,24 @@
+# Here We'll showing slice notation on lists
+# Take the funtionality of range function into lists
+# list[start:stop:step]
+# By default if START is missing then the defaults is 0
+# By default if STOP is missing then it takes the maximum value available by the lists
+# By default if STEP is missing then the defaults is 1
+
+letters = ['D','o','n',"''",'t',' ', 'p', 'a', 'n', 'i','c', '!']
+list1 = letters[0:10:3]
+# This statement starts at 0 stops at position 10 if exists and goes up by three
+
+list2 = letters[3:]
+# This statement starts at 3 and give everything else.
+
+list3 = letters[:10]
+# This statement starts at 0 stop at pos. 10 and go up by one.
+
+list4 = letters[::2]
+# This statement starts at 0 stops at the end of the list and goes up by 2.
+
+#print(list1)
+#print(list2)
+#print(list3)
+#print(list4)
