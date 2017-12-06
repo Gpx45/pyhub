@@ -9,8 +9,7 @@ for x in word: # check every object in word string obj
             found.append(x) # append that object to the end of the list
 for y in found: # For each letter of the found
     print(y) # Print each indexed letter.
-<<<<<<< HEAD
-  
+
+
 print(len(found))#prints out current length of found list.
 =======
->>>>>>> c83b9f85a88cd314ac190a2f3d713d776389c7aa
