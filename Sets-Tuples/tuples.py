@@ -3,7 +3,7 @@
 
 vowels = ('a','e','i','o','u')
 
-# If you store in item as a tuple with () you'll actually just get the type
+# If you store a item as a tuple with () you'll actually just get the type
 # of whatever you placed in the ()
 # ex.
 num = (1) # This isn't a Tuple
