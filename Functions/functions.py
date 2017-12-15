@@ -29,3 +29,17 @@ def search_vowels(word):
     vowels = set('aeeeiouuu')
     common = vowels.intersection(set(word))
     return common
+
+
+# Now lets see what could we do if we needed to generalize the function
+# But still maintain the old simple method
+# We can set a  default value on the argument call.
+
+def vsearch(phrase: str, letters: str = 'aeiou' )-> set:
+    return set(letters).intersection(set(phrase))
+# INTERPRETER----------------------------------------------------------
+# >>> vsearch('hello')
+# >>> {i,o}
+
+# Now for keyword assignment, this allows you to  have each argument in any order.
+# See mymodule folder for this function.
