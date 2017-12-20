@@ -1,5 +1,5 @@
 
-def vsearch(phrase: str, letters: str = 'aeiou' )-> set:
+def vsearch(phrase: str, letters: str = 'aeiou') -> set:
     return set(letters).intersection(set(phrase))
 
 # INTERPRETER----------------------------------------------------------
