@@ -7,12 +7,12 @@ app = Flask(__name__) # These are special values kept by the interpreter. Values
 def hello() -> str:
     return "Hello World"
 
-@app.route('/search4',)
+@app.route('/search4', methods = ['POST'])
 def do_search() ->str:
     return str(vsearch("life the universe","eiru"))
 
 @app.route('/entry')
-def entry_page() ->str:
+def entry_page() ->'html':
     return render_template('entry.html',the_title='Welcome to search4letters Online')
 
-app.run()
+app.run(debug=True)
