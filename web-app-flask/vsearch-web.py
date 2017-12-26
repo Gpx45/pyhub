@@ -7,7 +7,7 @@ app = Flask(__name__) # These are special values kept by the interpreter. Values
 def hello() -> str:
     return "Hello World"
 
-@app.route('/search4')
+@app.route('/search4',)
 def do_search() ->str:
     return str(vsearch("life the universe","eiru"))
 
