@@ -1,5 +1,5 @@
 
-# Here we will create a dictionary and expend it and chekck to add
+# Here we will create a dictionary and expend it and check to add
 # more values.
 
 fruits = {'apples': 10,'bananas': 3}
