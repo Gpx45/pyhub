@@ -1,0 +1,5 @@
+ImmutableMultiDict([('phrase', 'you are all good'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.71 Safari/537.36|{'o', 'a', 'e', 'u'}
+ImmutableMultiDict([('phrase', 'why is that'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.71 Safari/537.36|{'a', 'i'}
+ImmutableMultiDict([('phrase', 'who can you blame for the whipped cream?'), ('letters', 'best')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.71 Safari/537.36|{'b', 'e', 't'}
+ImmutableMultiDict([('phrase', 'that was great'), ('letters', 'best')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.71 Safari/537.36|{'s', 'e', 't'}
+ImmutableMultiDict([('phrase', 'maybe later'), ('letters', 'best')])|127.0.0.1|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.71 Safari/537.36|{'b', 't', 'e'}
