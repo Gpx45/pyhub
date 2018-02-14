@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # This use a file stream object to append information ai text to a file
 # There are other mode such as (r,w,a,x,b)
 # r = read(default)
@@ -5,7 +6,6 @@
 # a = append
 # x = read and write
 # b = binary
-
 
 stream = open('todos.txt', 'a')
 print('Put out the trash.',file=stream)

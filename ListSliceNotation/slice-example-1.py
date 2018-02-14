@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Here We'll showing slice notation on lists
 # Take the funtionality of range function into lists
 # list[start:stop:step]

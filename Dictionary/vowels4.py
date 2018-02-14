@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 vowels = ['a','e','i','o','u']
 words = input("Please Enter your phrase and or sentence: ")
 found = {}

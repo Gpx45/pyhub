@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 
 phrase = "Mavin the Paranoid Android"
 plist = list(phrase)

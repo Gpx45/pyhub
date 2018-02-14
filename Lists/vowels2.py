@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 vowels = ['a','e','i','o','u']
 word = "Milkways"
 found = []

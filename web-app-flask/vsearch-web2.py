@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, render_template,request,escape
 from vsearch import vsearch
 

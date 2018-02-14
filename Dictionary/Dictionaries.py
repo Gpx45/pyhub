@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 """ Here we start with dictionaries,
 These are like lists however they are like a
 map (C++, Java) or hash (Perl, Ruby)
@@ -9,7 +9,7 @@ person = {'Name': 'John Doe',
           'Gender': 'Male',
           'Occupation': 'Researcher',
           'Home Planet': 'Mars'}
-          
+
 # dictionaries understand brackets but instead of indexes of numbers it uses the keys
 print(person['Name'])
 
