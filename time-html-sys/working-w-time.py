@@ -1,4 +1,4 @@
-# working further with dates.
+"""working further with dates."""
 import datetime
 time = datetime.date
 # print(time)
