@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def title():
     titleof ='The Meaning of Life'
     print(titleof)

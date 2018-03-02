@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # A pig latin generator
 
 phrase = input("Please Enter your phrase: ")

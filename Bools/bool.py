@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # every object in Python has a truth value associated with it, in that the object
 # evaluates to either TRUE or FALSE
 

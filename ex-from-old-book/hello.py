@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 #/usr/bin/env/python
 #/usr/local/bin/python
 # The lines up above is for UNIX/Linux portability

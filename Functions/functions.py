@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Will be seeing functions and their basic setup in Python.
 """
 def search_vowels():

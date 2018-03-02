@@ -1,4 +1,5 @@
-"""working further with dates."""
+#!/usr/bin/python3
+# working further with dates.
 import datetime
 time = datetime.date
 # print(time)
