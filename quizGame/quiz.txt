@@ -1,0 +1,19 @@
+
+Question 1
+Who was the first person to ever send a car to space?
+a. Elon Musk
+-
+Question 2
+Where is Silicon Valley located?
+b. San Francisco
+-
+Question 3
+Who owns the biggest technology company in America?
+d. Apple
+-
+Question 4
+Where is Amazon's Current Headquarters?
+a. Seattle
+-
+*
+anwser = a,b,d,a
