@@ -1,19 +1,29 @@
-
 Question 1
 Who was the first person to ever send a car to space?
 a. Elon Musk
+b. Jeff Bezos
+c. Bill Gates
+d. Bill Smith
 -
 Question 2
 Where is Silicon Valley located?
-b. San Francisco
+a. Miami, FL
+b. San Francisco, CA
+c. Seattle, WA
+d. Denver, CO
 -
 Question 3
 Who owns the biggest technology company in America?
+a. Samsung
+b. Snapchat
+c. Sony
 d. Apple
 -
 Question 4
 Where is Amazon's Current Headquarters?
-a. Seattle
+a. Seattle, WA
+b. Boston, MA
+c. Doral, FL
+d. Ontario, Canada
 -
-*
-anwser = a,b,d,a
+a,b,d,a
