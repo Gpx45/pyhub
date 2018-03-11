@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-from flask import Flask, render_template,request,escape
+from flask import Flask, render_template, request, escape
 from vsearch import vsearch
+import pymysql
 
 app = Flask(__name__)
 # These are special values kept by the interpreter.
@@ -8,13 +9,34 @@ app = Flask(__name__)
 # underscores.
 
 
-def log_request(req: 'flask_request', res: str)-> None:
-    with open('vsearch.log', 'a') as log:
-        print(req.form, req.remote_addr, req.user_agent, res, sep='|', file=log)
 
 # We can have more than one URL be associated with a function, this is so you
 # don't have to import if you don't need to.
 
+
+#def log_request(req: 'flask_request', res: str)-> None:
+#    with open('vsearch.log', 'a') as log:
+#        print(req.form, req.remote_addr, req.user_agent, res, sep='|', file=log)
+
+
+
+def log_request(req: 'flask request', res: str)-> None:
+    dbconfig = {'host': 'localhost', 'user': 'vsearch', 'password': 'password',
+                'db': 'vsearchlogdb'}
+    db = pymysql.connect(**dbconfig)
+    _sql = """insert into log
+    (phrase, letters, ip, browser_string, results)
+    values (%s, %s, %s, %s, %s)"""
+    with db.cursor() as cursor:
+        cursor.execute(_sql, (req.form['phrase'],
+                              req.form['letters'],
+                              req.remote_addr,
+                              req.user_agent.browser,
+                              res, ))
+    db.commit()
+
+    with open('vsearch.log', 'a') as log:
+        print(req.form, req.remote_addr, req.user_agent.browser, res, sep='|', file=log)
 
 @app.route('/')
 @app.route('/entry')
