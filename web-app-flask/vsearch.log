@@ -6,3 +6,6 @@ ImmutableMultiDict([('phrase', 'maybe later'), ('letters', 'best')])|127.0.0.1|M
 ImmutableMultiDict([('phrase', 'many'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0|{'a'}
 ImmutableMultiDict([('phrase', 'cake'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0|{'e', 'a'}
 ImmutableMultiDict([('phrase', 'cake'), ('letters', 'gas')])|127.0.0.1|Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0|{'a'}
+ImmutableMultiDict([('phrase', 'custard'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'u', 'a'}
+ImmutableMultiDict([('phrase', 'maingy'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'i', 'a'}
+ImmutableMultiDict([('phrase', 'maingy'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'i', 'a'}
