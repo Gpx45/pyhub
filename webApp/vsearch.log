@@ -10,3 +10,5 @@ ImmutableMultiDict([('phrase', 'custard'), ('letters', 'aeiou')])|127.0.0.1|chro
 ImmutableMultiDict([('phrase', 'maingy'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'i', 'a'}
 ImmutableMultiDict([('phrase', 'maingy'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'i', 'a'}
 ImmutableMultiDict([('phrase', 'manner'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'e', 'a'}
+ImmutableMultiDict([('phrase', 'but'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'u'}
+ImmutableMultiDict([('phrase', 'gigantic'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'i', 'a'}
