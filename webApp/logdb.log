@@ -1,0 +1,4 @@
+ImmutableMultiDict([('phrase', 'hello'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'e', 'o'}
+ImmutableMultiDict([('phrase', 'are you sure'), ('letters', 'yes')])|127.0.0.1|chrome|{'e', 'y', 's'}
+ImmutableMultiDict([('phrase', 'hello hunter you asshole!'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'u', 'a', 'e', 'o'}
+ImmutableMultiDict([('phrase', 'hello hunter you asshole!'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'u', 'a', 'e', 'o'}

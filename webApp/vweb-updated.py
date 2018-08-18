@@ -18,9 +18,9 @@ app = Flask(__name__)
 #        print(req.form, req.remote_addr, req.user_agent, res, sep='|', file=log)
 
 app.config['dbconfig'] = {'host': 'localhost',
-                          'user': 'vsearch',
-                          'password': 'password',
-                          'db': 'vsearchlogdb'}
+                          'user': 'root',
+                          'password': '',
+                          'db': 'logdb'}
 
 
 def log_request(req: 'flask request', res: str)-> None:
@@ -34,7 +34,7 @@ def log_request(req: 'flask request', res: str)-> None:
                               req.user_agent.browser,
                               res, ))
 
-    with open('vsearch.log', 'a') as log:
+    with open('logdb.log', 'a') as log:
         print(req.form, req.remote_addr, req.user_agent.browser, res, sep='|',
               file=log)
 

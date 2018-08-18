@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 
 def log_request(req: 'flask request', res: str)-> None:
-    dbconfig = {'host': 'localhost', 'user': 'vsearch', 'password': 'password',
+    dbconfig = {'host': 'localhost', 'user': 'root', 'password': 'cyberfalcon',
                 'db': 'vsearchlogdb'}
     db = pymysql.connect(**dbconfig)
     _sql = """insert into log
