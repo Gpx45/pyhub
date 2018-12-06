@@ -1,0 +1,8 @@
+ImmutableMultiDict([('phrase', 'get'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'e'}
+ImmutableMultiDict([('phrase', 'get'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'e'}
+ImmutableMultiDict([('phrase', 'get'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'e'}
+ImmutableMultiDict([('phrase', 'perhaps'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'a', 'e'}
+ImmutableMultiDict([('phrase', 'perhaps'), ('letters', 'aeiou')])|127.0.0.1|chrome|{'a', 'e'}
+ImmutableMultiDict([('phrase', "x'; show tables;"), ('letters', 'aeiou')])|127.0.0.1|chrome|{'a', 'e', 'o'}
+ImmutableMultiDict([('phrase', "x'; show tables;"), ('letters', 'aeiou')])|127.0.0.1|chrome|{'a', 'e', 'o'}
+ImmutableMultiDict([('phrase', "x'; show tables;"), ('letters', 'aeiou')])|127.0.0.1|chrome|{'o', 'e', 'a'}

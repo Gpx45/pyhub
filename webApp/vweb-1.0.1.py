@@ -1,8 +1,11 @@
-#!/usr/bin/python3
+ #!/usr/bin/python3
 from vsearch import vsearch
-from flask import Flask, render_template, request, escape
+from flask import Flask, render_template, request, escape, session
 from  DB import Database
 from datetime import datetime
+from checker import check_logged_in
+from time import sleep
+
 
 app = Flask(__name__)
 
@@ -23,8 +26,19 @@ app.config['dbconfig'] = {'host': 'localhost',
                           'password': '',
                           'db': 'logdb'}
 
+@app.route('/login')
+def do_login() -> str:
+    session['logged_in'] = True
+    return 'You are logged in'
+
+@app.route('/logout')
+def do_logout() -> str:
+    session.pop['logged_in']
+    return 'You are now logged out'
+
 # The log_request function is where the values are sent and then placed on the log table inside the logdb database.
 def log_request(req: 'flask request', res: str)-> None:
+    #sleep(15) # --> This is emulate a delay on the site.
     with Database(app.config['dbconfig']) as cursor:
         _sql = """insert into log
         (phrase, letters, ip, browser_string, results)
@@ -61,6 +75,7 @@ def do_search() -> 'html':
 
 # This webpage retrieves the same information but querying the Database instead of making a file.
 @app.route('/viewlog')
+@check_logged_in
 def view_the_log() -> 'html':
     with Database(app.config['dbconfig']) as cursor:
         _sql = """select phrase, letters, ip, browser_string, results, time_date
@@ -72,6 +87,8 @@ def view_the_log() -> 'html':
                            the_row_titles = titles,
                            the_data = contents,)
 
+
+app.secret_key = 'YouWillNeverGuessMySecretKey'
 # If this file is ran as is it'll run in debug mode, if called from another object and or function it'll run without dubug mode on.
 if __name__ == '__main__':
     app.run(debug=True)
