@@ -9,4 +9,5 @@ except FileNotFoundError:
     print('The data file is missing.')
 except PermissionError:
     print('You do not have permission.')
-except "Another error occured."
+except Exception as err: # This sets an exception object in general to output its object content to the err variable.
+    print("An error happened: ", str(err))

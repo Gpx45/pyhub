@@ -1,11 +1,11 @@
  #!/usr/bin/python3
 from vsearch import vsearch
-from flask import Flask, render_template, request, escape, session
-from  DB import Database
+from flask import Flask, render_template, request, escape, session, copy_current_request_context
+from  DB import Database, ConnectionError, CredentialsError, SQLError
 from datetime import datetime
 from checker import check_logged_in
 from time import sleep
-
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -37,21 +37,6 @@ def do_logout() -> str:
     return 'You are now logged out'
 
 # The log_request function is where the values are sent and then placed on the log table inside the logdb database.
-def log_request(req: 'flask request', res: str)-> None:
-    #sleep(15) # --> This is emulate a delay on the site.
-    with Database(app.config['dbconfig']) as cursor:
-        _sql = """insert into log
-        (phrase, letters, ip, browser_string, results)
-        values (%s, %s, %s, %s, %s)"""
-        cursor.execute(_sql, (req.form['phrase'],
-                              req.form['letters'],
-                              req.remote_addr,
-                              req.user_agent.browser,
-                              res, ))
-    # The context manager is to simply write all of the values onto a log file logdb.log
-    with open('logdb.log', 'a') as log:
-        print(req.form, req.remote_addr, req.user_agent.browser, res, sep='|',
-              file=log)
 
 # Entrance to the website.
 @app.route('/')
@@ -62,27 +47,69 @@ def entry_page() ->'html':
 # In search4 is where the results are sent the server and the vsearch distributed package runs to compute a value.
 @app.route('/search4', methods=['POST'])
 def do_search() -> 'html':
+
+    @copy_current_request_context # Holds onto the variables values afterthe thread starts so that it remains even after the function ends.
+    def log_request(req: 'flask request', res: str)-> None:
+        # raise Exception("Something awful happened.")  # A custom created exception. Its only an example.
+        #sleep(15) # --> This is emulate a delay on the site.
+            with Database(app.config['dbconfig']) as cursor:
+                _sql = """insert into log
+                (phrase, letters, ip, browser_string, results)
+                values (%s, %s, %s, %s, %s)"""
+                cursor.execute(_sql, (req.form['phrase'],
+                                      req.form['letters'],
+                                      req.remote_addr,
+                                      req.user_agent.browser,
+                                      res, ))
+
     phrase = request.form['phrase']
     letters = request.form['letters']
     title = "Here are your results: "
     results = str(vsearch(phrase, letters))
-    log_request(request, results) # --> Here is where the values are sent the database object that then stores in MySQL
+
+
+    try:
+        t = Thread(target=log_request, args=(request,results)) # Created a Thread object so that the call would allow the website to continue without being held up.
+        t.start() # --> Here is where the values are sent the database object that then stores in MySQL
+
+    except ConnectionError as err:
+        print("Database could not be reached. Error: ", str(err))
+    except CredentialsError as err:
+        print("UserID/Password is incorrect: ", str(err))
+    except SQLError as err:
+        print("Is your query correct? Error: ", str(err))
+    except Exception as err:
+        print("Just an unknown Error: ", str(err))
+
     return render_template('result.html',
                            the_phrase = phrase,
                            the_letters = letters,
                            the_title = title,
                            the_results = results,)
 
+
 # This webpage retrieves the same information but querying the Database instead of making a file.
 @app.route('/viewlog')
 @check_logged_in
 def view_the_log() -> 'html':
-    with Database(app.config['dbconfig']) as cursor:
-        _sql = """select phrase, letters, ip, browser_string, results, time_date
-        from log"""
-        cursor.execute(_sql)
-        contents = cursor.fetchall()
-    titles = ('Phrase','Letters', 'Remote Address', 'User Agent', 'Results', 'Time')
+    try:
+        with Database(app.config['dbconfig']) as cursor:
+            _sql = """select phrase, letters, ip, browser_string, results, time_date
+            from log"""
+            cursor.execute(_sql)
+            contents = cursor.fetchall()
+        titles = ('Phrase','Letters', 'Remote Address', 'User Agent', 'Results', 'Time')
+
+    except ConnectionError as err:
+        print("Is the database on? Error: ", str(err))
+    except CredentialsError as err:
+        print("UserID/Password is incorrect: ", str(err))
+    except SQLError as err:
+        print("Is your query correct? Error: ", str(err))
+    except Exception as err:
+        print("Just an unknown Error: ", str(err))
+
+
     return render_template('viewlog.html', the_title = "View Log",
                            the_row_titles = titles,
                            the_data = contents,)
