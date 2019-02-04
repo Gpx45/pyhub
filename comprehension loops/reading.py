@@ -51,8 +51,8 @@ print(destinations)
 
 ## Above you see a pretty common pattern in Python. So below its a shorthand (also known as a comprehension.)
 
-more_dest = [dest.tile() for dest in flights.values()]
-
+more_dest = [dest.title() for dest in flights.values()]
+print(more_dest)
 ## In the above example you see that you can create the conversation within the more_dest data structure.
 
 flight_times = []
