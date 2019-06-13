@@ -11,7 +11,7 @@ stream = open('todos.txt', 'a')
 print('Put out the trash.',file=stream)
 print('Feed the cow',file=stream)
 print('Prepare tax return',file=stream)
-file.close()
+stream.close()
 tsk = open('todos.txt')
 for i in tsk:
     print(i, end="")
