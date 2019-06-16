@@ -1,9 +1,6 @@
 
 def same_pattern(txt1,txt2):
-    booklet1 = dict()
-    booklet2 = dict()
-    pattern1 = list(txt1)
-    pattern2 = list(txt2)
+    booklet = dict()
     compare_table1 = list()
     compare_table2 = list()
     counter = 0
@@ -12,20 +9,22 @@ def same_pattern(txt1,txt2):
         print("Strings are NOT SAME LENGTH")
 
     else:
-        for letter in pattern1:
-            if letter not in booklet1:
-                booklet1.update({letter:counter})
+        pattern = list(txt1)
+        for letter in pattern:
+            if letter not in booklet:
+                booklet.update({letter:counter})
                 counter += 1
-            compare_table1.append(booklet1[letter])
+            compare_table1.append(booklet[letter])
 
         counter = 0
+        pattern = list(txt2)
+        booklet.clear()
 
-        for letter in pattern2:
-            if letter not in booklet2:
-                booklet2.update({letter:counter})
+        for letter in pattern:
+            if letter not in booklet:
+                booklet.update({letter:counter})
                 counter += 1
-            compare_table2.append(booklet2[letter])
+            compare_table2.append(booklet[letter])
 
         return print(compare_table1 == compare_table2)
 
-same_pattern("ABAB", "ZXZXY")
