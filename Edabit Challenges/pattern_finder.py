@@ -15,16 +15,15 @@ def same_pattern(txt1,txt2):
                 booklet.update({letter:counter})
                 counter += 1
             compare_table1.append(booklet[letter])
+        print(compare_table1)
 
         counter = 0
         pattern = list(txt2)
-        booklet.clear()
 
         for letter in pattern:
             if letter not in booklet:
                 booklet.update({letter:counter})
                 counter += 1
             compare_table2.append(booklet[letter])
-
+        print(compare_table2)
         return print(compare_table1 == compare_table2)
-
