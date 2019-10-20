@@ -1,6 +1,11 @@
 
 def correct_signs(string):
-    string = list(string)
-    for i in string:
-        if i == '<' or i == '>':
-            
+	eval(string)
+	if string:
+		print("True")
+		return True
+	else:
+		print("False")
+		return False
+
+correct_signs("1 < 2")
